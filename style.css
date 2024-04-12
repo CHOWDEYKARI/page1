@@ -1,3 +1,44 @@
-body{
-    background-color: red;
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-image: url('DJ_IMAGE.jpg');
+    background-size: 65%;
+
+}
+
+.rating {
+    display: inline-block;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: yellow;
+}
+
+.rating label {
+    font-size: 50px;
+    color: blue;
+    cursor: pointer;
+}
+
+.rating input[type="radio"]:checked~label {
+    color: #ffcc00;
+}
+
+.rating label:hover,
+.rating label:hover~label {
+    color: #ffcc00;
+}
+
+label {
+    color: blue;
+    font-size: 25px;
+    font-weight: bold;
 }
