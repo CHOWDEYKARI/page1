@@ -1,51 +1,44 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MY FAVORITE MOVIE RATING</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>MY_CALCULATOR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+    <div class="container">
+        <fieldset id="container">
+            <form name="calculator">
 
-    <h1 style="color: blue">MY FAVORITE MOVIE RATING SYSTEM</h1>
-    <form id="rating-form" action="#">
+                <input id="display" type="text" name="display" readonly>
 
-        <div class="movie-info">
-            <label for="movie-name">YOUR FAVORITE MOVIE NAME:</label>
-            <input type="text" id="movie-name" size="41px" name="movie_name"
-                placeholder="PLEASE ENTER YOUR FAVORITE MOVIE NAME" required />
-        </div>
-
-        <div class="rating">
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" title="1 star">&#9733;</label>
-
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" title="2 stars">&#9733;</label>
-
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" title="3 stars">&#9733;</label>
-
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" title="4 stars">&#9733;</label>
-
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" title="5 stars">&#9733;</label>
-        </div>
-
-        <button type="submit">PLEASE SUBMIT YOUR MOVIE RATING</button>
-    </form>
-
-    <p class="feedback-message">
-    <h2 style="color: red;">THANK-Q VERY MUCH FOR GIVEN MOVIE RATING</h2>
-    </p>
-
+                <input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
+                <input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
+                <input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
+                <input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
+                <br>
+                <input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
+                <input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
+                <input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
+                <input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
+                <br>
+                <input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
+                <input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
+                <input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
+                <input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
+                <br>
+                <input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
+                <input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
+                <input class="button mathButtons" type="button" value="="
+                    onclick="calculator.display.value = eval(calculator.display.value)">
+                <input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
+       
+            </form>
+        </fieldset>
+    </div>
 </body>
 
 </html>
