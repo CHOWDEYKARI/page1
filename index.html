@@ -2,43 +2,321 @@
 <html lang="en">
 
 <head>
-    <title>MY_CALCULATOR</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .navbar-brand span {
+            color: #ff6347;
+            /* Customize colors for multi-colored text */
+        }
+
+        .navbar-brand span:nth-child(2) {
+            color: #1e90ff;
+        }
+
+        .navbar-brand span:nth-child(3) {
+            color: #32cd32;
+        }
+
+        .nav-image {
+            position: relative;
+        }
+
+        .nav-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav-image .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        .nav-image .overlay h4 {
+            margin: 0;
+        }
+
+        .registration-form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .footer-section {
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: black;
+            margin-top: 20px;
+            color: white;
+        }
+
+
+        .footer-section img {
+            width: 50%;
+            height: auto;
+        }
+
+        .footer-section h5 {
+            margin-top: 20px;
+        }
+
+        .footer-bottom {
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            margin: 0 10px;
+        }
+
+        .footer-icons a {
+            color: #333;
+            margin: 0 10px;
+        }
+
+        h3 {
+            margin-left: 150px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <fieldset id="container">
-            <form name="calculator">
+        <!-- First Section: Navigation Bars -->
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg" style="background-color: black; color: white;">
+                    <span class="navbar-text" id="datetime" style="color: white;"></span>
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link" href="#" style="color: white;">SignIn</a>
+                        <a class="nav-item nav-link" href="#" style="color: white;">SignUp</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="">
+                        <span>P</span><span>O</span><span>R</span><span>T</span><span>A</span><span>L</span><span>1</span>
+                    </a>
+                    <div class="nav-image ml-auto">
+                        <img src="./IMAGES/Decathlon_image.jpg" alt="Decathlon Ad">
+                        <div class="overlay">
+                            <!--<h4>Decathlon</h4>
+                            <p>Sports Accessories</p>-->
+                            <button class="btn btn-primary"
+                                style="background-color: blue; color: white; border-color: white;">View More</button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg" style="background-color: black;">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="color: white;">News</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: white;">
+                                    Fashion
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="">Fashion 1</a>
+                                    <a class="dropdown-item" href="">Fashion 2</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown2" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: white;">
+                                    Gadgets
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                    <a class="dropdown-item" href="">Gadget 1</a>
+                                    <a class="dropdown-item" href="">Gadget 2</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" style="color: white;">Lifestyles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="" style="color: white;">Video</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown3" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: white;">
+                                    Features
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                                    <a class="dropdown-item" href="">Feature 1</a>
+                                    <a class="dropdown-item" href="">Feature 2</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                style="color: white; border-color: white;"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
-                <input id="display" type="text" name="display" readonly>
+        <!-- Second Section: Signup and Login Form -->
+        <div class="registration-form">
+            <b>
+                <h3>Registration</h3></br></br></br>
+                <form>
+                    <div class="form-group">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="*******">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block"
+                        style="background-color: skyblue; color: black;">Sign Up</button>
+                    <button type="button" class="btn btn-secondary btn-block">Login</button>
+                </form>
+        </div></b>
 
-                <input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
-                <input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
-                <input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
-                <input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
-                <br>
-                <input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
-                <input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
-                <input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
-                <input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
-                <br>
-                <input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
-                <input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
-                <input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
-                <input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
-                <br>
-                <input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
-                <input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
-                <input class="button mathButtons" type="button" value="="
-                    onclick="calculator.display.value = eval(calculator.display.value)">
-                <input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
-       
-            </form>
-        </fieldset>
+        <!-- Third Section: Footer Section -->
+        <!-- Footer Section -->
+        <div class="footer-section">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Editor Picks</h5>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex mb-3">
+                            <img src="./images/EP1.jpeg" alt="Editor Pick 1" class="mr-3">
+                            <p>Travel can be done by foot, bicycle, automobile, train.</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="./images/EP2.jpeg" alt="Editor Pick 2" class="mr-3">
+                            <p>Travel can be done by foot, bicycle, automobile, train.</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="./images/EP1.jpeg" alt="Editor Pick 3" class="mr-3">
+                            <p>Travel can be done by foot, bicycle, automobile, train.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Popular Posts</h5>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex mb-3">
+                            <img src="./images/EP1.jpeg" alt="Popular Post 1" class="mr-3">
+                            <p>Travel can be done by foot, bicycle, automobile, train.</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="./images/EP2.jpeg" alt="Popular Post 2" class="mr-3">
+                            <p>Travel can be done by foot, bicycle, automobile, train.</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <img src="./images/EP1.jpeg" alt="Popular Post 3" class="mr-3">
+                            <p>Travel can be done by foot, bicycle, automobile, train.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Popular Category</h5>
+                    <ul>
+                        <li>Racing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20</li>
+                        <li>Travel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</li>
+                        <li>Interiors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</li>
+                        <li>Architecture&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</li>
+                        <li>Make it Modern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15</li>
+                        <li>Decorating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20</li>
+                    </ul>
+                </div>
+            </div>
+            <hr color="white">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>PORTAL1</h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Newspaper is your news, entertainment, music fashion website. We provide you with the latest
+                        breaking news and videos straight from the entertainment industry.</p>
+                    <p>Contact us: contact@portal1.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="footer-icons">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <p>All copyrights reserved to PORTAL1 - Developed by CFF INFOTECH</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Advertisement</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function updateTime() {
+                var now = new Date();
+                var dateTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+                document.getElementById('datetime').innerText = dateTime;
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+        });
+    </script>
 </body>
 
 </html>
